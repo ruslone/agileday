@@ -106,7 +106,6 @@ bot.action(['morning_skip', 'evening_skip'], (ctx) => {
 // ===== Webhook handler для Vercel =====
 
 
-
 export default async function handler(req, res) {
   try {
     if (req.method !== 'POST') {
