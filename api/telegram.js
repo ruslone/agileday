@@ -2,9 +2,6 @@ import { Telegraf, Markup } from 'telegraf';
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
-// ===== Хранилище (MVP: in-memory) =====
-// На Vercel состояние не гарантировано.
-// Для следующего шага: KV / Redis / Supabase.
 const userState = new Map();
 
 // ===== Команды =====
