@@ -13,19 +13,7 @@ const userState = new Map();
 // - или любой внешний сервис
 // ===== Команды =====
 
-export default async function handler(req, res) {
-  try {
-    if (req.method !== 'POST') {
-      return res.status(200).send('OK');
-    }
 
-    await bot.handleUpdate(req.body);
-    res.status(200).send('OK');
-  } catch (error) {
-    console.error('Error handling update:', error);
-    res.status(500).send('Internal Server Error');
-  }
-}
 
 // Middleware для логирования
 bot.use(async (ctx, next) => {
@@ -117,12 +105,18 @@ bot.action(['morning_skip', 'evening_skip'], (ctx) => {
 
 // ===== Webhook handler для Vercel =====
 
-export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    res.status(200).send('OK');
-    return;
-  }
 
-  await bot.handleUpdate(req.body);
-  res.status(200).send('OK');
+
+export default async function handler(req, res) {
+  try {
+    if (req.method !== 'POST') {
+      return res.status(200).send('OK');
+    }
+
+    await bot.handleUpdate(req.body);
+    res.status(200).send('OK');
+  } catch (error) {
+    console.error('Error handling update:', error);
+    res.status(500).send('Internal Server Error');
+  }
 }
