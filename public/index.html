@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Отдых в Евпатории</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="page-wrapper">
+    <div class="container">
+
+      <h1 id="user">Здравствуй!</h1>
+
+      <p class="main-text">
+        База отдыха «Дельфин 93» в Евпатории — это комфортное проживание в номерах с кухней в шаге от Чёрного моря. Для
+        гостей — собственный пляж, пирс, шезлонги и услуги трансфера. На благоустроенной территории и рядом есть вся
+        необходимая инфраструктура: магазины, кафе, парковка, детская площадка и бесплатный Wi-Fi.
+      </p>
+
+      <a class="link-btn" href="food.html">🍽️ Где поесть</a>
+      <a class="link-btn" href="sights.html">📍 Что посмотреть</a>
+      <a class="link-btn" href="gallery.html">📸 Фотогалерея</a>
+      <a class="link-btn" href="how-to-get.html">🚗 Как добраться</a>
+      <a class="link-btn" href="feedback.html">✉️ Обратная связь</a>
+
+    </div>
+  </div>
+
+  <script>
+    const tg = window.Telegram.WebApp;
+    tg.ready();
+
+    const user = tg.initDataUnsafe?.user;
+    if (user) {
+      document.getElementById("user").innerText = `Здравствуй, ${user.first_name}!`;
+    }
+  </script>
+
+</body>
+
+</html>

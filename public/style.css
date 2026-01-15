@@ -1,0 +1,153 @@
+:root {
+  --sea-blue: #0b5ed7;
+  --sea-blue-dark: #094db2;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f2f2f2;
+  color: #000;
+}
+
+/* Обёртка для центрирования */
+.page-wrapper {
+  padding: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Общий белый блок */
+.container {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* Заголовок */
+h1 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 24px;
+  color: #000;
+}
+
+/* Основной текст */
+.main-text {
+  font-size: 17px;
+  line-height: 1.4;
+  margin-bottom: 24px;
+  color: #000;
+}
+
+/* Кнопки-ссылки */
+.link-btn {
+  display: block;
+  margin-bottom: 12px;
+  padding: 14px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  background: var(--sea-blue);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Эффект нажатия */
+.link-btn:active {
+  background: var(--sea-blue-dark);
+  opacity: 1;
+}
+
+a {
+  color: var(--sea-blue);
+}
+  
+  .card {
+    margin-bottom: 24px;
+    padding: 12px;
+    border-radius: 10px;
+    background: var(--tg-theme-card-bg-color, #fff);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .card h3 {
+    margin: 0 0 6px;
+    font-size: 20px;
+  }
+  
+  .card p {
+    margin: 0 0 10px;
+    font-size: 15px;
+    color: black;
+  }
+
+  .address {
+    font-size: 16px;
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+  
+  .map-wrapper {
+    margin-bottom: 16px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  
+
+  /* Галерея */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Просмотр фото */
+.viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 1000;
+}
+
+.viewer.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.viewer img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+}
+
+  /* конец галереи */
