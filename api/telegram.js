@@ -2,18 +2,8 @@ import { Telegraf, Markup } from 'telegraf';
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
-// Сейчас данные хранятся в памяти - при перезапуске все сбросится
-// Вместо Map лучше использовать базу данных
+// Временное хранилище (замените на БД в продакшене)
 const userState = new Map();
-
-// Для Vercel можно использовать:
-// - Vercel KV (Redis) - бесплатный тариф
-// - PostgreSQL (Vercel Postgres)
-// - Supabase
-// - или любой внешний сервис
-// ===== Команды =====
-
-
 
 // Middleware для логирования
 bot.use(async (ctx, next) => {
@@ -104,8 +94,6 @@ bot.action(['morning_skip', 'evening_skip'], (ctx) => {
 });
 
 // ===== Webhook handler для Vercel =====
-
-
 export default async function handler(req, res) {
   try {
     if (req.method !== 'POST') {
