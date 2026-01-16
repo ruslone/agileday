@@ -1,4 +1,4 @@
-import { sql } from '../src/db.js';
+import sql from '../src/db.js';
 import fs from 'fs';
 
 const sqlText = fs.readFileSync('../src/migration.sql', 'utf-8');
