@@ -1,8 +1,7 @@
 // src/db.js
 
-import { createClient } from '@neondatabase/serverless';
-
-export const sql = createClient({ connectionString: process.env.DATABASE_URL });
+import { neon } from '@neondatabase/serverless';
+export const sql = neon(process.env.DATABASE_URL);
 
 // Создание/обновление статистики
 export async function upsertUser(ctx) {
