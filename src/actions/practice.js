@@ -1,7 +1,7 @@
+// src/actions/practice.js
 import { addStat } from '../db.js';
 
 export default function practiceActions(bot) {
-
   bot.action('morning_done', async (ctx) => {
     await addStat(ctx.from.id, 'morning');
     await ctx.editMessageText('✅ Утренняя практика выполнена');
