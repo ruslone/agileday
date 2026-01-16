@@ -1,9 +1,8 @@
 // src/db.js
-import postgres from 'postgres';
 
-export const sql = postgres(process.env.DATABASE_URL, {
-  ssl: { rejectUnauthorized: false }, // важно для Neon + Vercel
-});
+import { createClient } from '@neondatabase/serverless';
+
+export const sql = createClient({ connectionString: process.env.DATABASE_URL });
 
 // Создание/обновление статистики
 export async function upsertUser(ctx) {
