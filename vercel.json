@@ -1,8 +1,13 @@
 {
     "functions": {
       "api/telegram.js": {
-        "maxDuration": 10
       }
-    }
-  }
+    },
+    "crons": [
+      {
+        "path": "/api/send-reminders",
+        "schedule": "* * * * *"
+      }
+    ]
+}
   
