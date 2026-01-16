@@ -2,12 +2,6 @@
     "functions": {
       "api/telegram.js": {
       }
-    },
-    "crons": [
-      {
-        "path": "/api/send-reminders",
-        "schedule": "* * * * *"
-      }
-    ]
+    }
 }
   
