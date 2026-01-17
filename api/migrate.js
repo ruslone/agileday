@@ -2,7 +2,7 @@ import { sql } from "../src/db.js";
 
 export default async function handler(req, res) {
   try {
-    await sql`
+    await sql.unsafe(`
       CREATE TABLE IF NOT EXISTS users (
         user_id BIGINT PRIMARY KEY,
         first_name TEXT,
@@ -33,11 +33,11 @@ export default async function handler(req, res) {
         type TEXT NOT NULL,
         completed_at TIMESTAMPTZ DEFAULT NOW()
       );
-    `;
+    `);
 
     res.status(200).json({ ok: true });
   } catch (e) {
-    console.error(e);
+    console.error("Migration error:", e);
     res.status(500).json({ error: e.message });
   }
 }
